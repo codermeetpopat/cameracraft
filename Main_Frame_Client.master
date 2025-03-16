@@ -1,0 +1,248 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main_Frame_Client.master.cs" Inherits="Main_Frame_Client" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".dropdown img.flag").addClass("flagvisibility");
+
+        $(".dropdown dt a").click(function () {
+            $(".dropdown dd ul").toggle();
+        });
+
+        $(".dropdown dd ul li a").click(function () {
+            var text = $(this).html();
+            $(".dropdown dt a span").html(text);
+            $(".dropdown dd ul").hide();
+            $("#result").html("Selected value is: " + getSelectedValue("sample"));
+        });
+
+        function getSelectedValue(id) {
+            return $("#" + id).find("dt a span.value").html();
+        }
+
+        $(document).bind('click', function (e) {
+            var $clicked = $(e.target);
+            if (!$clicked.parents().hasClass("dropdown"))
+                $(".dropdown dd ul").hide();
+        });
+
+
+        $("#flagSwitcher").click(function () {
+            $(".dropdown img.flag").toggleClass("flagvisibility");
+        });
+    });
+     </script>
+<!-- start menu -->     
+<link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/megamenu.js"></script>
+<script>$(document).ready(function () { $(".megamenu").megamenu(); });</script>
+<!-- end menu -->
+
+
+    <script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+		<script type="text/javascript" id="sourcecode">
+		    $(function () {
+		        $('.scroll-pane').jScrollPane();
+		    });
+		</script>
+<!----details-product-slider--->
+				<!-- Include the Etalage files -->
+					<link rel="stylesheet" href="css/etalage.css">
+					<script src="js/jquery.etalage.min.js"></script>
+				<!-- Include the Etalage files -->
+				<script>
+				    jQuery(document).ready(function ($) {
+
+				        $('#etalage').etalage({
+				            thumb_image_width: 300,
+				            thumb_image_height: 400,
+
+				            show_hint: true,
+				            click_callback: function (image_anchor, instance_id) {
+				                alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
+				            }
+				        });
+				        // This is for the dropdown list example:
+				        $('.dropdownlist').change(function () {
+				            etalage_show($(this).find('option:selected').attr('class'));
+				        });
+
+				    });
+				</script>
+				<!----//details-product-slider--->	
+
+
+<!-- top scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+   <script type="text/javascript">
+       jQuery(document).ready(function ($) {
+           $(".scroll").click(function (event) {
+               event.preventDefault();
+               $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1200);
+           });
+       });
+	</script>
+
+
+
+
+</head>
+
+<body>
+    <form id="form1" runat="server">
+
+    <%-- %><div class="header-top">
+	     <div class="wrap"> 
+		
+	    <div class="cssmenu">
+		   <ul>
+			 <%--<li><a href="Login_Registation.aspx">Sign up</a></li> --%>
+             <%--  <li><asp:LinkButton ID="btnsign" runat="server" OnClick="btnsign_Click"/></li>--%>
+             
+               
+               
+			 <%--<li><a href="shop.html">Store Locator</a></li>--%> 
+			 <%--<li><a href="login.html">My Account</a></li>--%> 
+			 <%--<li><a href="checkout.html">CheckOut</a></li> 
+                   
+		   </ul>
+		</div>--%>
+		<%--<ul class="icon2 sub-icon2 profile_img">
+			<li><a class="active-icon c2" href="#"> </a>
+				<ul class="sub-icon2 list">
+					<li><h3>Products</h3><a href=""></a></li>
+					<li><p>Lorem ipsum dolor sit amet, consectetuer  <a href="">adipiscing elit, sed diam</a></p></li>
+				</ul>
+			</li>
+		</ul>
+		<div class="clear"></div>
+ 	</div>
+   </div>--%>
+
+
+    <div class="header-bottom">
+    <div class="wrap">
+        <!-- Logo Section -->
+        
+        <!-- Start Header Menu -->
+        <ul class="megamenu skyblue" style="text-align:center;">
+               <a class="Acessories-Brand" href="Default.aspx">
+                  <img src="Images/logovs.png" alt="My Acessories" height="60px" width="100px" style="overflow:hidden;" />
+
+                  </a>
+            <%--<li><a class"color4" href="Default.aspx"><asp:Label runat="server" ID="unm"></asp:Label></a></li>--%>
+            <li ><a class="color1" href="Default.aspx"> Home</a></li>
+            <li class="grid"><a class="color6" href="#"> Brands</a>
+                <div class="megapanel">
+                    <div class="row">
+                        <div class="col1">
+                            <div class="h_nav">
+                                <h4>popular Brands</h4>
+                                <ul>
+                                    <asp:Repeater ID="rptcategory" runat="server">
+                                        <ItemTemplate>
+                                            <li>
+                                                <a href="filter_product.aspx?cat_id=<%#Eval("cat_id") %>">
+                                                    <%#Eval("cat_name") %>
+                                                </a>
+                                            </li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </ul>    
+                            </div>
+                        </div>
+                        <!-- <img src="images/nav_img.jpg" alt="Brand Image" /> -->
+                    </div>
+                </div>
+            </li>
+            <li><a class="color2" href="wishlist.aspx" >Wishlist </a></li>
+            <li><a class="color3" href="my-cart.aspx" >My Cart </a></li>
+            <li><a class="color4" href="contact_us.aspx" > Contact us</a></li>
+            <li><a class="color5" href="about_us.aspx" > About us</a></li>
+            <li><a class="color9" href="Track_Order.aspx" > Track Order </a></li>
+             <li><a class="color9" href="userprofile.aspx" > userprofile </a></li>
+
+            <li><asp:LinkButton ID="btnsign" CssClass="color7" runat="server" OnClick="btnsign_Click"  /></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+
+
+
+    
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+
+
+<footer>
+    <div class="footer">
+       	  <div class="footer-top">
+       		<div class="wrap">
+       			   <div class="col_1_of_footer-top span_1_of_footer-top">
+				  	 <ul class="f_list">
+				  	 	<li><span class="delivery">CameraCraft Free delivery on all orders</span></li>
+				  	 </ul>
+				   </div>
+				   <div class="col_1_of_footer-top span_1_of_footer-top">
+				  	<ul class="f_list">
+				  	 	<li><img src="images/f_icon1.png" alt=""/><span class="delivery">Customer Service : 0987654321 (Telephone)</span></li>
+				  	 </ul>
+				   </div>
+				   <div class="col_1_of_footer-top span_1_of_footer-top">
+				  	<ul class="f_list">
+				  	 	<li><img src="images/f_icon2.png" alt=""/><span class="delivery">Fast delivery & free returns</span></li>
+				  	 </ul>
+				   </div>
+				  <div class="clear"></div>
+			 </div>
+       	 </div>
+       	 
+       	 <div class="copy">
+       	   <div class="wrap">
+       	   	  <p>© All rights reserved | &nbsp;CameraCraft</p>
+       	   </div>
+       	 </div>
+       </div>
+</footer>
+        
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+		</script>
+        <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+
+</body>
+</html>

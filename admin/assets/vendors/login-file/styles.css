@@ -1,0 +1,89 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(90deg, rgba(94,6,6,1) 0%, rgba(0,44,255,1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Login Container */
+.login-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-container h1 {
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 5px red;
+
+}
+
+/* Input Groups */
+.input-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: rgba(94,6,6,1);
+
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 3px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Login Button */
+.login-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+background: linear-gradient(90deg, rgba(94,6,6,1) 0%, rgba(0,44,255,1) 100%);}
+
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 1.5rem;
+  }
+
+  .input-group input {
+    padding: 0.5rem;
+  }
+
+  .login-button {
+    padding: 0.5rem;
+  }
+}

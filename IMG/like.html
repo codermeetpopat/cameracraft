@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" 
+          href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <script src=
+"https://code.jquery.com/jquery-3.7.1.min.js">
+    </script>
+    <style>
+        .btn {
+            background-color: transparent;
+            border: none;
+            width: 150%;
+        }
+
+        .fa-heart {
+            font-size: 50px;
+            
+        }
+
+        .blank {
+            color: #142034;
+            //align-items: center;
+
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    
+
+    <button id="like" class="btn">
+        <i id="icon" 
+           class="fa-regular fa-heart blank">
+        </i>
+    </button>
+
+    <script>
+        $(document).ready(function () {
+            $("#like").on("click", function () {
+                $("#icon").toggleClass("red");
+                $("#icon").toggleClass("fa-solid");
+            });
+        });
+    </script>
+</body>
+
+</html>
