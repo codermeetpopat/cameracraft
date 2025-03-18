@@ -8,7 +8,9 @@ traditional retail boundaries, offering customers a seamless digital
 marketplace to purchase a wide range of camera accessories from the 
 comfort of their home or studio.
 Module:
-Userside, 
+
+Userside
+
 Adminside
 
 
@@ -20,21 +22,34 @@ Step 1: Install Visual Studio
 
 2.During installation, select ASP.NET and web development workload.
 
-Step 2: Open the ASP.NET Project
-Launch Visual Studio.
+Step 2: Open the ASP.NET Project Launch Visual Studio.
+
 1.Click on "Open a project or solution".
+
 2.Browse to your ASP.NET project folder and open the Default.aspx file.
+
 Step 3: Set the Startup Project
+
 1.In Solution Explorer, right-click on the project you want to run.
+
 2.Click "Set as Startup Project".
+
 Step 5: Run the Project
+
 1.Press F5 (Run with Debugging) or Ctrl + F5 (Run without Debugging).
+
 2.The website will launch in your default browser.
+
 Step 6: Troubleshooting (If Needed)
+
 -If you get an error, check:
+
 -The Output Window (View → Output).
+
 -The Error List (View → Error List).
+
 -If required dependencies (like .NET Framework or NuGet packages) are installed (Tools → NuGet Package Manager → Manage NuGet Packages).
+
 AdminSide:
 Login Page:
 ![01adminlogin](https://github.com/user-attachments/assets/2726999d-36fa-4086-9a90-32817af2dfd8)
