@@ -13,9 +13,13 @@ Adminside
 
 
 -How to Run Project:
+
 Step 1: Install Visual Studio
+
 1.Download and install Visual Studio from Microsoft's official website.
+
 2.During installation, select ASP.NET and web development workload.
+
 Step 2: Open the ASP.NET Project
 Launch Visual Studio.
 1.Click on "Open a project or solution".
